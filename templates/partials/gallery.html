@@ -1,0 +1,24 @@
+<!-- Portfolio Section -->
+<section id="gallery">
+    <div class="container">
+        <div class="row">
+            <h1 class="title">Gallery</h1>
+            <h2 class="subtitle">(Click to enlarge the image)</h2>
+
+            {% for image in cms.galleryimages %}
+            <div class="col-sm-3 col-xs-12">
+                <div class="portfolio-item wow fadeInLeft" data-wow-delay=".5s">
+                    <a href="#"><img src="{{image.image_file_url}}" alt=""></a>
+                    <div class="overlay">
+                        <div class="icons">
+                            <a data-lightbox="image1" href="{{image.image_file_url}}" class="preview"><i class="fa fa-search-plus fa-4x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!-- Portfolio Section End -->

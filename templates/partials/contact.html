@@ -1,0 +1,27 @@
+<!-- Conatct Section -->
+    <section id="contact">
+        <div class="container text-center">
+            <div class="row">
+                <h1 class="title">Contacts</h1>
+                <h2 class="subtitle"></h2>
+
+                <table style="text-align:left" class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Contact</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for contact in cms.contacts %}
+                    <tr >
+                      <td>
+                        <h5 style="margin-bottom:0;">{{contact.first_name}} {{contact.last_name}}<br/>{{contact.position}}</h5>
+                        <p style="color: #A6A6A6;margin-bottom:0;">{{contact.phone}}</p><a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </section>

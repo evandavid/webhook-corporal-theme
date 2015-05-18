@@ -1,0 +1,40 @@
+{# ------------------------------------------------------- #}
+
+{# YOUR HOMEPAGE #}
+
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+
+{# ------------------------------------------------------- #}
+
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append "- Homepage" to the site title defined in base. #}
+{% block title %}{% parent %} - Homepage{% endblock %}
+
+{% block content %}
+
+{% include "templates/partials/header.html" %}
+
+<section id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title">{{cms.settings.name}}</h1>
+                <h2 class="subtitle">{{cms.settings.description}}</h2>
+
+                <div class="col-md-12 animated fadeInRight delay-0-5" style="text-align:center">
+                    <a href="#building" class="btn btn-common btn-lg">About Building</a>
+                    <a href="{{ cms.settings.tenant_access_url }}" class="btn btn-primary btn-lg">Tenant Portal Access</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

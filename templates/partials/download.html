@@ -1,0 +1,18 @@
+<section id="download">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title">Downloads</h1>
+                <h2 class="subtitle">&nbsp;</h2>
+
+                <div class="col-md-12 animated fadeInRight delay-0-5">
+                    {% for document in cms.documents %}
+                    <a href="{{site.data.about.location.documents.document.attachment_url}}">
+                        <i class="fa fa-file-text-o"></i> {{document.attachment_file_name}}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

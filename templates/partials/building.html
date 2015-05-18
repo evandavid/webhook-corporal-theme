@@ -1,0 +1,22 @@
+<section id="building">
+    <div class="container">
+        <div class="row">
+            <h1 class="title">The Building</h1>
+            <h2 class="subtitle">{{site.data.about.location.name}}</h2>
+
+            <div class="col-md-8 col-sm-12">
+                <p>
+                    {{cms.building.description | raw}}
+                </p>
+                <h3>Building Location</h3>
+                <div ng-if="item" ng-bind-html="map(item)" class="flexi-container map">
+                  <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.au/maps?&amp;aq=f&amp;ie=UTF8&amp;hl=en&amp;t=m&amp;z=15&amp;output=embed&q={{cms.building.address}}"></iframe>
+                </div>
+                <p class="location"><i class="icomoon-location"></i><span style="font-size: .9em;color: #7E7E7E;">{{cms.building.address}}</span></p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{cms.building.building_image_url}}">
+            </div>
+        </div>
+    </div>
+</section>
